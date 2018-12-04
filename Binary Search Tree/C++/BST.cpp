@@ -81,19 +81,40 @@ bool insert(Node<T> *root, T value)
 template <class T>
 bool remove(Node<T> *root, T value)
 {
-  if (root == NULL) {
+  if (root == NULL)
+  {
     return false
-  } else {
+  }
+  else
+  {
     removeHelper(root, value)
   }
 }
 
 template <class T>
-Node<T>* findMin(Node<T>* root) {
+Node<T> *findMin(Node<T> *root)
+{
   if (root == NULL)
     return NULL;
   else if (root.left == NULL)
     return root;
   else
     return findMin(t.left);
+}
+
+template <class T>
+Node<T> *find(Node<T> *root, T target)
+{
+  if (root.value < target)
+  {
+    return find(root.right, target);
+  }
+  else if (root.value > target)
+  {
+    return find(root.left, target);
+  }
+  else
+  {
+    return root;
+  }
 }

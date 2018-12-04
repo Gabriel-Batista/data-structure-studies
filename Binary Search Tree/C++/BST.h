@@ -38,5 +38,6 @@ class BinarySearchTree
   bool addHelper(Node* node, T value);
   bool remove(Node *node, T value);
   bool removeHelper(Node<T>* parent, Node*<T> current, T value)
-  Node* findMin(Node* root);
+  Node<T>* findMin(Node<T>* root);
+  Node<T>* find(Node<T>* root, T target)
 };
